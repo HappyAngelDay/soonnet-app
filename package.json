@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "git add . && git commit -m \"Deploy\" && npm run build && git subtree push --prefix dist origin gh-pages"
+    "deploy": "git add . && git commit -m \"Deploy\" && npm run build && echo > dist/.nojekyll && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "framework7": "^8.3.4",
