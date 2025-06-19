@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
 export default defineConfig({
-  base: '/soonnet-app/', // ⬅️⬅️⬅️ 重點設定！
+  base: '/soonnet-app/', 
   plugins: [vue()],
   resolve: {
     alias: {
