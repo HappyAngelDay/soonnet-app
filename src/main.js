@@ -1,10 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import 'framework7/css';
 
 // Framework7 主檔案（完整版）
 import Framework7 from 'framework7';
-
-// Vue plugin
 import Framework7Vue, { registerComponents } from '../node_modules/framework7-vue/framework7-vue-bundle';
 
 // CSS（直接引入 bundle）
