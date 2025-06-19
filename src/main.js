@@ -14,4 +14,16 @@ Framework7.use(Framework7Vue)
 
 const app = createApp(App)
 registerComponents(app)
+
+async function initializeApp() {
+  try {
+    const result = await someAsyncFunction(); // 確保 Promise 被正確處理
+    console.log(result); // 顯示結果而非 [object Promise]
+  } catch (error) {
+    console.error('Error initializing app:', error);
+  }
+}
+
+initializeApp();
+
 app.mount('#app')
