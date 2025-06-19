@@ -1,29 +1,33 @@
 <template>
-    <div class="frame">
-        <div class="frame-content">
-            <div class="frame-content-header">
-                <!-- 狀態列/頂部區域 -->
-                <div class="frame-header">
-                    <div class="frame-header-speaker"></div>
-                    <div class="frame-header-camera"></div>
-                </div>
-                <div class="container">
-                    <div class="header-bars">
-                        <div class="header-bars-block">
-                            <span>{{ currentTime }}</span>
-                        </div>
-                        <div class="header-bars-block">
-                            <i class="fa fa-signal" aria-hidden="true"></i>
-                            <i class="fa fa-wifi" aria-hidden="true"></i>
-                            <i class="fa fa-battery-full" aria-hidden="true"></i>
+    <div class="iphone-frame">
+        <div class="frame">
+            <div class="frame-content">
+                <div class="frame-content-header">
+                    <!-- 狀態列/頂部區域 -->
+                    <div class="frame-header">
+                        <div class="frame-header-speaker"></div>
+                        <div class="frame-header-camera"></div>
+                    </div>
+                    <div class="container">
+                        <div class="header-bars">
+                            <div class="header-bars-block">
+                                <span>{{ currentTime }}</span>
+                            </div>
+                            <div class="header-bars-block">
+                                <i class="fa fa-signal" aria-hidden="true"></i>
+                                <i class="fa fa-wifi" aria-hidden="true"></i>
+                                <i class="fa fa-battery-full" aria-hidden="true"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- 直接 slot，不要 frame-content-body -->
-            <slot></slot>
-            <div class="frame-content-bottom">
-                <div class="bottom-shape"></div>
+                <!-- 直接 slot，不要 frame-content-body -->
+                <div class="content">
+                    <slot></slot>
+                </div>
+                <div class="frame-content-bottom">
+                    <div class="bottom-shape"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -52,14 +56,14 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+
 .frame {
-    width: 320px;
-    height: 650px;
-    background-color: #ffffff;
-    position: relative;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
     margin: 0px auto;
-    border: 6px solid #bdbbbb;
-    border-radius: 50px;
     box-shadow: 14px 21px 42px 10px rgba(0, 0, 0, .2);
     font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, Helvetica, system-ui, Avenir, sans-serif;
 }
@@ -133,5 +137,11 @@ onUnmounted(() => {
 
 .header-bars-block i {
     margin-right: 5px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 </style>
